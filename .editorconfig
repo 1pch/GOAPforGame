@@ -1,0 +1,4 @@
+[*.cs]
+
+# IDE0320: Сделать анонимную функцию статической
+dotnet_diagnostic.IDE0320.severity = error
