@@ -37,7 +37,7 @@ namespace GOAP
                 if(!i)
                 {
                     isPossible = false;
-                    break;
+                    return;
                 } 
                     
         }

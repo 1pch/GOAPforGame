@@ -1,8 +1,9 @@
 using UnityEditorInternal;
+using UnityEngine;
 
 namespace GameUtils
 {
-    class Singleton<T> where T: new()
+    class Singleton<T> : MonoBehaviour where T: new()
     {
         protected static T instance;
 

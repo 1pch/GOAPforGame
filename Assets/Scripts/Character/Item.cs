@@ -14,6 +14,6 @@ namespace ItemController
             this.amount = amount;
         }
         Items item;
-        ushort amount;
+        public ushort amount;
     }
 }

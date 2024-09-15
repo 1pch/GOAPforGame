@@ -1,12 +1,12 @@
 using UnityEngine;
 using EntityController;
 using GOAP;
-using System;
+using CharacterActions;
 namespace CharacterController
 {
     class Character : Entity
     {
-        [SerializeField] GameObject[] gameObjects;
+        [SerializeField] public static GameObject[] gameObjects;
         InventoryManager inventoryManager;
         public int energy;
         void Start()
@@ -18,7 +18,13 @@ namespace CharacterController
         {
             if(Input.GetKeyDown(KeyCode.Space) && isMoving == false)
             {
-                MoveTo(gameObjects[0]);
+                ActionManager.MakeThread(new GOAPAction("makeThread", 1, new bool[]{inventoryManager.HasItem(new ItemController.Item(ItemController.Items.Wool, 2))}), this);
+            }
+
+            if(isMoving)
+            {
+                //transform.position += new Vector3(movementSpeed, 0, 0);
+                transform.position += transform.forward * movementSpeed * Time.deltaTime;
             }
         }
         void Action1()
