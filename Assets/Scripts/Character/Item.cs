@@ -1,9 +1,12 @@
+using System.Collections.Generic;
+
 namespace ItemController
 {
     enum Items
     {
         Wool,
-        Scissors
+        Scissors,
+        Fabric
     }
 
     class Item
@@ -12,8 +15,16 @@ namespace ItemController
         {
             this.item = item;
             this.amount = amount;
+            this.attributes = new Dictionary<string, object>();
         }
-        Items item;
+        public Item(Items item, ushort amount, Dictionary<string, object> attributes)
+        {
+            this.item = item;
+            this.amount = amount;
+            this.attributes = attributes;
+        }
+        public Items item;
         public ushort amount;
+        public Dictionary<string, object> attributes;
     }
 }

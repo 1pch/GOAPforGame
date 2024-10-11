@@ -1,6 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 using GOAP;
+using CharacterActions;
 
 namespace EntityController
 {
@@ -12,10 +13,13 @@ namespace EntityController
 
         public void MoveTo(GameObject gameObject)
         {
-            isMoving = true;
-            currentTaget = gameObject;
-            transform.LookAt(currentTaget.transform.position);
-            Debug.Log(isMoving);
+            if(!isMoving)
+            {
+                isMoving = true;
+                currentTaget = gameObject;
+                transform.LookAt(currentTaget.transform.position);
+                Debug.Log(isMoving);
+            }
         }
         /*public void MoveTo(Vector3 vector3)
         {

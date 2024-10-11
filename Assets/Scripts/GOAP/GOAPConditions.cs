@@ -9,7 +9,7 @@ namespace GOAP
         hasMaterials,
         hasMoney
     }
-    class Conditioton
+    /*class Conditioton
     {
         public Conditioton(Requirement requirement)
         {
@@ -17,5 +17,5 @@ namespace GOAP
         }
        public delegate bool Requirement();
        Requirement requirement;
-    }
+    }*/
 }

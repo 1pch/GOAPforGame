@@ -14,32 +14,27 @@ namespace GOAP
         string Name{get;}
         public short Cost{get;}
         //object[] RequirementConditions{get;}
-        public delegate bool Requirement();
+        //public delegate bool Requirement();
         //Requirement requirement;
 
         public bool[] Requirements;
-        public bool isPossible
+        /*private bool _isPossible
         {
             get
             {
-                IsPossible();
-                return isPossible;
+                isPossible()
             }
-            set
-            {
-                isPossible = value;
-            }
-        }
-        private void IsPossible()
+        }*/
+        public bool isPossible()
         {
-            isPossible = true;
             foreach(bool i in Requirements)
+            {
                 if(!i)
                 {
-                    isPossible = false;
-                    return;
+                    return false;
                 } 
-                    
+            }
+            return true;          
         }
     }
 }
